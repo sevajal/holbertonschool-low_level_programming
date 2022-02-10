@@ -1,15 +1,17 @@
 #include <stdio.h>
 /**
  * main - Print size of various types.
+ * char - Character
+ * int - Integer
  * Return: 0
  */
 int main(void)
 {
 	char c;
 
-	int 4;
+	int a;
 
 	sizeof(c);
-	sizeof(4);
+	sizeof(a);
 	return (0);
 }
