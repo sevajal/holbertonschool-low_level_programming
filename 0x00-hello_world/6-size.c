@@ -7,10 +7,10 @@
  */
 int main(void)
 {
-	printf(sizeof(a));
-	printf(sizeof(b));
-	printf(sizeof(c));
-	printf(sizeof(d));
-	printf(sizeof(e));
+	printf(sizeof(char));
+	printf(sizeof(int));
+	printf(sizeof(long int));
+	printf(sizeof(long long int));
+	printf(sizeof(float));
 	return (0);
 }
