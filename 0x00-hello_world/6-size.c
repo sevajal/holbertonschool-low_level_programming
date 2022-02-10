@@ -17,7 +17,7 @@ int main(void)
 
 	float e;
 
-	printf("Size of a char: " sizeof(a) " byte(s))\n";
+	printf("Size of a char: " ("%c\n",sizeof(a)) " byte(s))");
 	printf("%lu\n", sizeof(b));
 	printf("%lu\n", sizeof(c));
 	printf("%lu\n", sizeof(d));
