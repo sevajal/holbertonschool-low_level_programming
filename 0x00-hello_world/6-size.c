@@ -17,10 +17,10 @@ int main(void)
 
 	float e;
 
-	sizeof(a);
-	sizeof(b);
-	sizeof(c);
-	sizeof(d);
-	sizeof(e);
+	printf(sizeof(a));
+	printf(sizeof(b));
+	printf(sizeof(c));
+	printf(sizeof(d));
+	printf(sizeof(e));
 	return (0);
 }
