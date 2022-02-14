@@ -1,11 +1,12 @@
+#ifndef MAIN_H
+#define MAIN_H
 #include <unistd.h>
 
 /**
- * _putchar - writes the character c to stdout
+ * Includes all my prototypes
  * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * 
+ *  
  */
 
 int _putchar(char c)
@@ -13,3 +14,25 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
+void print_alphabet(void)
+{
+	char i;
+
+	for (i = 97; i <= 122; i++)
+	_putchar(i);
+}
+
+void print_alphabet_x10(void)
+{
+	char i = 48;
+
+	while (i <= 57)
+	{
+	print_alphabet();
+	_putchar(10);
+	i++;
+	}
+}
+
+#endif
