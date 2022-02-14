@@ -13,6 +13,7 @@ int main(void)
 	char h = 'h';
 	char a = 'a';
 	char r = 'r';
+	char lf = 10;
 
 	_putchar(_);
 	_putchar(p);
@@ -22,5 +23,6 @@ int main(void)
 	_putchar(h);
 	_putchar(a);
 	_putchar(r);
+	_putchar(lf);
 	return (0);
 }
