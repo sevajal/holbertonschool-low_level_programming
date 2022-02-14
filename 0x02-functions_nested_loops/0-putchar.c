@@ -1,8 +1,12 @@
 #include "main.h"
 /**
- * main - Prints _putchar
+ * main - writes the string "_putchar"
+ * @c: The character to print
  * Return: 0
  */
+
+int _putchar(char c);
+
 int main(void)
 {
 	char _ = '_';
