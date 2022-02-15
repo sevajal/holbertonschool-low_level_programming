@@ -9,24 +9,11 @@ int _putchar(char c);
 
 int main(void)
 {
-	char _ = '_';
-	char p = 'p';
-	char u = 'u';
-	char t = 't';
-	char c = 'c';
-	char h = 'h';
-	char a = 'a';
-	char r = 'r';
-	char lf = 10;
+	char a[] = "_putchar";
+	int i;
 
-	_putchar(_);
-	_putchar(p);
-	_putchar(u);
-	_putchar(t);
-	_putchar(c);
-	_putchar(h);
-	_putchar(a);
-	_putchar(r);
-	_putchar(lf);
+	for (i = 1; i <= 7; i++);
+	_putchar(a[i]);
+	_putchar('\n');
 	return (0);
 }
