@@ -5,8 +5,8 @@
 /**
  * Includes all my prototypes
  * @c: The character to print
- * 
- *  
+ * @n: the character to evaluate
+ * @num: the number to evaluate 
  */
 
 int _putchar(char c);
@@ -20,5 +20,7 @@ void print_line(int n);
 void print_diagonal(int n);
 void print_square(int size);
 void print_triangle(int size);
+int maxprime(long num);
+void print_number(int n);
 
 #endif
