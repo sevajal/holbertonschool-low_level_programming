@@ -15,11 +15,9 @@ int main(void)
 	printf("%lu, ", fib[1]);
 	for (i = 2; i < 50; i++)
 	{
+		fib[i] = fib[i - 1] + fib[i - 2];
 		if (i != 49)
-		{
-			fib[i] = fib[i - 1] + fib[i - 2];
 			printf("%lu, ", fib[i]);
-		}
 		else
 			printf("%lu", fib[i]);
 	}
