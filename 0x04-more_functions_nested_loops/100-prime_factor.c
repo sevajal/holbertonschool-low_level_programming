@@ -27,5 +27,6 @@ int main(void)
 	}
 	if (num > 2)
 		maxprime = num;
+	printf("%d\n", maxprime);
 	return (maxprime);
 }
