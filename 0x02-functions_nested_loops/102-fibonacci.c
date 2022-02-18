@@ -24,4 +24,5 @@ int main(void)
 			printf("%lu", fib[i]);
 	}
 	printf("\n");
+	return (0);
 }
