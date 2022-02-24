@@ -18,9 +18,9 @@ int _strcmp(char *s1, char *s2)
 	for (j = 0; s2[j]; j++)
 		;
 	if (i > j)
-		res = 15;
+		res = 1;
 	else if (i < j)
-		res = -15;
+		res = -1;
 	else
 		res = 0;
 	return (res);
