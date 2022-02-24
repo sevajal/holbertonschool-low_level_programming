@@ -18,6 +18,8 @@ char *cap_string(char *s)
 		{
 			if ((s[i - 1] == space[j]) && (s[i] >= 97 && s[i] <= 122))
 				s[i] = (s[i] - 32);
+			else if (s[0] >= 97 && s[0] <= 122)
+				s[0] = (s[0] - 32);
 		}
 	}
 	return (s);
