@@ -9,13 +9,16 @@
 char *cap_string(char *s)
 {
 	int i = 0;
+	int j = 0;
+	char space[] = {9, 10, 32, 33, 34, 40, 41, 44, 46, 59, 63, 123, 125};
 
 	for (i = 0; s[i]; i++)
 	{
-		if (s[i] == '\t')
-			s[i] = ' ';
-		if ((s[i - 1] < 48 || s[i - 1] > 122) && (s[i] >= 97 && s[i] <= 122))
-			s[i] = (s[i] - 32);
+		for (j = 0; space[j]; j++)
+		{
+			if ((s[i - 1] == space[j]) && (s[i] >= 97 && s[i] <= 122))
+				s[i] = (s[i] - 32);
+		}
 	}
 	return (s);
 }
