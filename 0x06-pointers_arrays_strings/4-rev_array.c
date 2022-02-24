@@ -15,7 +15,7 @@ void reverse_array(int *a, int n)
 
 	for (i = 0; a[i]; i++)
 		;
-		if (i <= n)
+		if (i < n)
 		{
 			for (j = 0; i >= j; i--)
 			{
@@ -25,9 +25,9 @@ void reverse_array(int *a, int n)
 				j++;
 			}
 		}
-		else if (i > n)
+		else if (i >= n)
 		{
-			i = n;
+			i = n - 1;
 			for (j = 0; i >= j; i--)
 			{
 				tmp = rev[j];
