@@ -12,6 +12,8 @@
  * @s1: The string 1.
  * @dest: String destination.
  * @src: String source.
+ * @size: size
+ * @size_r: size
  */
 
 int _putchar(char c);
@@ -23,5 +25,9 @@ void reverse_array(int *a, int n);
 char *string_toupper(char *s);
 char *cap_string(char *s);
 char *leet(char *s);
+char *rot13(char *s);
+void print_number(int n);
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
+void print_buffer(char *b, int size);
 
 #endif
