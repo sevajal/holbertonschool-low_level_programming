@@ -15,7 +15,7 @@ char *_strstr(char *haystack, char *needle)
 
 	while (*haystack != '\0')
 	{
-		haystack = ph;
+		ph = haystack;
 		pn = needle;
 		while (*pn != '\0' && *ph == *pn)
 		{
