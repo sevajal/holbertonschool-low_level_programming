@@ -7,22 +7,24 @@
 
 void print_number(int n)
 {
-    if (n == 0)
-        _putchar((n) + '0');
-    while (n != 0)
-    {
-        int digit = n % 10;
-        n = n / 10;
-        _putchar((digit) + '0');
-        /*como lo reverso?*/
-    }
-    while (n < 0)
-    {
-        int abs = (n * -1);
-        int digit = abs % 10;
-        abs = abs / 10;
-        _putchar((digit) + '0');
-        _putchar('-');
-        /*como lo reverso?*/
-    }
+	unsigned int i, abs, tmp;
+
+	if (n < 0)
+	{
+		_putchar('-');
+		i = n * -1;
+	}
+	else
+		i = n;
+
+	abs = i;
+	tmp = 1;
+
+	while (abs > 9)
+	{
+		abs /= 10;
+		tmp *= 10;
+	}
+	for (; tmp >= 1; tmp /= 10)
+		_putchar(((i / tmp) % 10) + '0');
 }
