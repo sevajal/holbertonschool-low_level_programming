@@ -17,9 +17,9 @@ void print_diagsums(int *a, int size)
 		for (j = 0; j < size; j++)
 		{
 			if (i == j)
-				diag1 += a[i*(size+1)];
-			if (i + j == size -1)
-				diag2 += a[(i+1)*(size-1)];
+				diag1 += a[i * (size + 1)];
+			if (i + j == size - 1)
+				diag2 += a[(i + 1) * (size - 1)];
 		}
 	}
 	printf("%d, %d\n", diag1, diag2);
