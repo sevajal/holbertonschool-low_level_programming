@@ -1,37 +1,37 @@
 #include "main.h"
 
 /**
- * _print_rev_recursion - prints a string in reverse.
+ * _strlen_recursion - returns the length of a string.
  * @s: The string.
- * Return: reversed string.
+ * Return: the length of a string.
  */
 
-void _print_rev_recursion(char *s)
+int _strlen_recursion(char *s)
 {
 	if (!s || !*s)
-		return;
+		return (0);
 
-	_print_rev_recursion(s + 1);
-	_putchar(*s);
+	return (1 + _strlen_recursion(s + 1));
 }
 
 /**
- * _puts_recursion - prints a string, followed by a new line.
+ * compare - two characters of the string.
  * @s: The string.
- * Return: string.
+ * @len: length of the string
+ * Return: 0 if a character is different or 1.
  */
 
-void _puts_recursion(char *s)
+char compare(char *s, int len)
 {
-	if (!s || !*s)
-	{
-		_putchar('\n');
-		return;
-	}
+	if (*s != s[len - 1])
+		return (0);
 
-	_putchar(*s);
-	_puts_recursion(s + 1);
+	if (*s == '\0')
+		return (1);
+
+	return (compare(s + 1, len - 2));
 }
+
 
 /**
  * is_palindrome - returns 1 if a string is a palindrome and 0 if not.
@@ -41,11 +41,7 @@ void _puts_recursion(char *s)
 
 int is_palindrome(char *s)
 {
-	char *string = _puts_recursion(s);
-	char *reverse = _print_rev_recursion(s);
+	int len = _strlen_recursion(s);
 
-	if (string == reverse)
-		return (1);
-
-	return (0);
+	return (compare(s, len));
 }
