@@ -35,12 +35,12 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	strdup = (char *)malloc(len * sizeof(char));
+	strdup = (char *)malloc((len + 1) * sizeof(char));
 
 	if (strdup == NULL)
 		return (NULL);
 
-	for (i = 0; i < len; i++)
+	for (i = 0; i <= len; i++)
 	{
 		strdup[i] = str[i];
 	}
