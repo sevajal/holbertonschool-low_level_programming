@@ -32,9 +32,9 @@ char *_strdup(char *str)
 
 	len = _strlen(str);
 
-	strdup = malloc(len * sizeof(char));
+	strdup = (char *)malloc(len * sizeof(char));
 
-	if (str == NULL || strdup == NULL)
+	if (strdup == NULL)
 		return (NULL);
 
 	for (i = 0; i < len; i++)
