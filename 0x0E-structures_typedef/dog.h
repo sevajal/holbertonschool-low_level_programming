@@ -15,6 +15,15 @@ struct dog
 	char *owner;
 };
 
+/**
+ * struct dog - prototypes.
+ * @name: dog's name
+ * @age: dog's age
+ * @owner: dog's owner
+ * @d: ponter.
+ */
+
 void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
 
 #endif
