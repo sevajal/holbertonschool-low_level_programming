@@ -6,6 +6,11 @@
  * function_pointers - prototypes
  * @name: name
  * @f: pointer function
+ * @size: array size
+ * @array: array
+ * @action: pointer function
+ * @cmp: pointer function
+ * @c: Character.
  */
 
 void print_name(char *name, void (*f)(char *));
