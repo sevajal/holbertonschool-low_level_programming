@@ -2,17 +2,6 @@
 #define FUNCTION_POINTERS_H
 #include <stdlib.h>
 
-/**
- * function_pointers - prototypes
- * @name: name
- * @f: pointer function
- * @size: array size
- * @array: array
- * @action: pointer function
- * @cmp: pointer function
- * @c: Character.
- */
-
 int _putchar(char c);
 void print_name(char *name, void (*f)(char *));
 void array_iterator(int *array, size_t size, void (*action)(int));
