@@ -2,48 +2,89 @@
 #include <stdio.h>
 
 /**
+ * printchar - prints a char.
+ * @types: a list of types of arguments passed to the function.
+ * Return: anything.
+ */
+
+void printchar(va_list types)
+{
+	printf("%c", va_arg(types, int));
+}
+
+/**
+ * printstr - prints a string.
+ * @types: a list of types of arguments passed to the function.
+ * Return: anything.
+ */
+void printstr(va_list types)
+{
+	char *s;
+
+	s = va_arg(types, char *);
+	if (s == NULL)
+		s = "(nil)";
+	printf("%s", s);
+}
+
+/**
+ * printfloat - prints a float.
+ * @types: a list of types of arguments passed to the function.
+ * Return: anything.
+ */
+void printfloat(va_list types)
+{
+	printf("%f", va_arg(types, double));
+}
+
+/**
+ * printint - prints a integer.
+ * @types: a list of types of arguments passed to the function.
+ * Return: anything.
+ */
+void printint(va_list types)
+{
+	printf("%d", va_arg(types, int));
+}
+
+/**
  * print_all - prints anything.
  * @format: a list of types of arguments passed to the function.
  * Return: anything.
  */
 
-void print_all(const char *format, ...)
+void print_all(const char * const format, ...)
 {
 	va_list args;
+	int i = 0;
+	int j = 0;
+	char *space = "";
+
+	selection functions[] = {
+		{"c", printchar},
+		{"i", printint},
+		{"s", printstr},
+		{"f", printfloat},
+	};
 
 	va_start(args, format);
 
-	while (*format != '\0')
+	while (format && format[i])
 	{
-		if (*format == 'i')
+		j = 0;
+		while (functions[j].type)
 		{
-			int i = va_arg(args, int);
-
-			printf("%d, ", i);
+			if (*(functions[j].type) == format[i])
+			{
+				printf("%s", space);
+				functions[j].f(args);
+				space = ", ";
+				break;
+			}
+			j++;
 		}
-		else if (*format == 'c')
-		{
-			int c = va_arg(args, int);
-
-			printf("%c, ", c);
-		}
-		else if (*format == 'f')
-		{
-			double d = va_arg(args, double);
-
-			printf("%f, ", d);
-		}
-		else if (*format == 's')
-		{
-			char *str = va_arg(args, char*);
-
-			if (str)
-				printf("%s, ", str);
-			else
-				printf("(nil)");
-		}
-		++format;
+		i++;
 	}
-	va_end(args);
 	printf("\n");
+	va_end(args);
 }
