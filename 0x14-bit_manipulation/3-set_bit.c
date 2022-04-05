@@ -12,7 +12,9 @@ int set_bit(unsigned long int *n, unsigned int index)
 {
 	if (n)
 	{
-		*n = *n | (1 << index);
+		int clearBit = ~(1 << index);
+		int tmp = *n & clearBit;
+		*n = tmp | (1 << index);
 		return (*n);
 	}
 	return (-1);
