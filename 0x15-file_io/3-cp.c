@@ -23,6 +23,7 @@ int main(int ac, char **av)
 	if (fd_to == -1)
 	{	dprintf(2, "Error: Can't write to %s\n", av[2]);
 		exit(99); }
+	valRead = 1024;
 	while (valRead > 0)
 	{
 		valRead = read(fd_from, buffer, 1024);
