@@ -9,7 +9,8 @@
 
 int main(int ac, char **av)
 {
-	ssize_t fd_from, fd_to, valRead, valWrite, valClose_from, valClose_to;
+	ssize_t valRead, valWrite, valClose_from, valClose_to;
+	int fd_from, fd_to;
 	char buffer[1024];
 
 	if (ac != 3)
@@ -38,13 +39,13 @@ int main(int ac, char **av)
 	valClose_from = close(fd_from);
 	if (valClose_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", fd_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
 	}
 	valClose_to = close(fd_to);
 	if (valClose_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %ld\n", fd_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
 	return (1);
