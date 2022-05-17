@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	int i, j, k, l;
+	int i, j, k, l, first, second;
 
 	for (i = 48; i < 58; i++)
 	{
@@ -15,9 +15,11 @@ int main(void)
 		{
 			for (k = 48; k < 58; k++)
 			{
-				for (l = 0; l < 58; l++)
+				for (l = 48; l < 58; l++)
 				{
-					if ((i <= k && j < l) || (i < k && j <= l))
+				first = (i * 10) + j;
+				second = (k * 10) + l;
+					if (first < second)
 					{
 					putchar(i);
 					putchar(j);
