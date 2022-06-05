@@ -12,18 +12,15 @@ void hash_table_print(const hash_table_t *ht)
 	char *split = "";
 
 	printf("{");
-	if (ht)
+	while (i < ht->size)
 	{
-		while (i < ht->size)
+		while (ht->array[i])
 		{
-			while (ht->array[i])
-			{
-				printf("%s'%s': '%s'", split, ht->array[i]->key, ht->array[i]->value);
-				split = ", ";
-				ht->array[i] = ht->array[i]->next;
-			}
-			i++;
+			printf("%s'%s': '%s'", split, ht->array[i]->key, ht->array[i]->value);
+			split = ", ";
+			ht->array[i] = ht->array[i]->next;
 		}
+		i++;
 	}
 	printf("}\n");
 }
