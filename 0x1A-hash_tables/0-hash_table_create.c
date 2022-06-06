@@ -15,11 +15,9 @@ hash_table_t *hash_table_create(unsigned long int size)
 	my_ht = (hash_table_t *)malloc(sizeof(hash_table_t));
 	if (my_ht == NULL)
 		return (NULL);
-
 	array = calloc(size, sizeof(hash_node_t *));
 	if (array == NULL)
 		return (NULL);
-
 	my_ht->size = size;
 	my_ht->array = array;
 	return (my_ht);
