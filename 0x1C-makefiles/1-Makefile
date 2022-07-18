@@ -1,5 +1,5 @@
 CC = gcc
-SRCS := $(wildcard main.c school.c)
+SRC := $(wildcard main.c school.c)
 
 all:
-	${CC} ${SRCS} -o school
+	${CC} ${SRC} -o school
