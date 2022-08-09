@@ -1,6 +1,13 @@
 #include "search_algos.h"
 #include <math.h>
 
+/**
+ * min - return the min value between two values.
+ * @a: first value.
+ * @b: second value.
+ * Return: the min value.
+ */
+
 int min(int a, int b)
 {
 	return ((b > a) ? a : b);
@@ -24,16 +31,16 @@ int jump_search(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 
-    jump = floor(sqrt(size));
+	jump = floor(sqrt(size));
 
 	while (array[min(jump, size) - 1] < value)
 	{
 		printf("Value checked array[%li] = [%d]\n", prev, array[prev]);
 		prev = jump;
-        jump += floor(sqrt(size));
+		jump += floor(sqrt(size));
 		check = 1;
-        if (prev >= size)
-        	break;
+		if (prev >= size)
+			break;
 	}
 	if (check == 0)
 		printf("Value checked array[%li] = [%d]\n", prev, array[prev]);
