@@ -25,7 +25,7 @@ int min(int a, int b)
 
 int jump_search(int *array, size_t size, int value)
 {
-	unsigned long int jump, prev = 0;
+	size_t jump, prev = 0;
 
 	if (!array)
 		return (-1);
