@@ -32,7 +32,7 @@ int binarySearch(int *array, int left, int right, int value)
 			return (middle);
 		}
 		if (array[middle] > value)
-			return (binarySearch(array, left, middle - 1, value));
+			return (binarySearch(array, left, middle, value));
 		return (binarySearch(array, middle + 1, right, value));
 	}
 	return (-1);
