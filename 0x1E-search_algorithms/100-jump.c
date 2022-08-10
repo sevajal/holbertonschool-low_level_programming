@@ -26,29 +26,22 @@ int min(int a, int b)
 int jump_search(int *array, size_t size, int value)
 {
 	unsigned long int jump, prev = 0;
-	int check = 0;
 
 	if (!array)
 		return (-1);
 
 	jump = floor(sqrt(size));
 
-	while (array[min(jump, size) - 1] < value)
+	while (array[min(prev, size - 1)] < value)
 	{
 		printf("Value checked array[%li] = [%d]\n", prev, array[prev]);
 		prev = jump;
 		jump += floor(sqrt(size));
-		check = 1;
 		if (prev >= size)
 			break;
 	}
-	if (check == 0)
-		printf("Value checked array[%li] = [%d]\n", prev, array[prev]);
-	else
-	{
-		jump = prev;
-		prev -= floor(sqrt(size));
-	}
+	jump = prev;
+	prev -= floor(sqrt(size));
 	printf("Value found between indexes [%li] and [%li]\n", prev, jump);
 
 	for (; array[prev] <= value || !array[prev]; prev++)
