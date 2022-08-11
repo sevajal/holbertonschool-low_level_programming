@@ -2,18 +2,6 @@
 #include <math.h>
 
 /**
- * min - return the min value between two values.
- * @a: first value.
- * @b: second value.
- * Return: the min value.
- */
-
-int min(int a, int b)
-{
-	return ((b > a) ? a : b);
-}
-
-/**
  * jump_search - searches for a value in a sorted array of integers using
  * the Jump search algorithm.
  * @array: pointer to the first element of the array to search in.
