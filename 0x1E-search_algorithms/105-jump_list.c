@@ -38,20 +38,20 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	l_jump = jump_node(list, jump);
 	while (l_jump && l_jump->n < value && sumjump < size)
 	{
-		printf("Value checked at index[%li] = [%d]\n", l_jump->index, l_jump->n);
+		printf("Value checked at index [%li] = [%d]\n", l_jump->index, l_jump->n);
 		prev = l_jump;
 		l_jump = jump_node(prev, sumjump += jump);
 	}
-	printf("Value checked at index[%li] = [%d]\n", l_jump->index, l_jump->n);
+	printf("Value checked at index [%li] = [%d]\n", l_jump->index, l_jump->n);
 	printf("Value found between indexes [%li] and [%li]\n",
 	prev->index, l_jump->index);
 
 	while (prev->n < value && prev->next)
 	{
-		printf("Value checked array[%li] = [%i]\n", prev->index, prev->n);
+		printf("Value checked at index [%li] = [%i]\n", prev->index, prev->n);
 		prev = prev->next;
 	}
-	printf("Value checked array[%li] = [%i]\n", prev->index, prev->n);
+	printf("Value checked at index [%li] = [%i]\n", prev->index, prev->n);
 	if (prev->n == value)
 		return (prev);
 	return (NULL);
